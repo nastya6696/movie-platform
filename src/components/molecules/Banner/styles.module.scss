@@ -1,0 +1,36 @@
+@import "../../../assets/scss/common";
+
+.banner {
+  background-image: url("../../../assets/images/baner.png");
+  background-color: $black;
+  height: 380px;
+}
+
+.title {
+  @include fontSizes(40px, 49px);
+  color: $white;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.addMovieBtn {
+  width: 177px;
+  height: 46px;
+  border-radius: 4px;
+  color: $red;
+  background-color: $grey-background-30-transparent;
+  border: none;
+  @include fontSizes(20px, 25px);
+  padding: 11px 18px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 60px;
+}
+
+.searchArea {
+  padding: 0 140px;
+  margin-top: 45px;
+}

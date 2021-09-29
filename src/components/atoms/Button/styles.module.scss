@@ -1,0 +1,12 @@
+@import "src/assets/scss/common";
+
+.btnBasic {
+  width: 233px;
+  height: 48px;
+  background-color: $red;
+  color: $white;
+  border: none;
+  border-radius: 4px;
+  @include fontSizes(20px, 25px);
+  font-weight: 200;
+}

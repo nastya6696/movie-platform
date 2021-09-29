@@ -1,0 +1,23 @@
+@import "src/assets/scss/common";
+
+.resultsFilter {
+  :global {
+    .react-tabs__tab-list {
+      border-bottom: 2px solid $grey;
+      color: $white;
+    }
+
+    .react-tabs__tab {
+      border: none;
+      bottom: -2px;
+      margin-right: 30px;
+      @include fontSizes(16px, 20px);
+    }
+
+    .react-tabs__tab--selected {
+      border-bottom: 3px solid $red;
+      background: none;
+      color: $white;
+    }
+  }
+}

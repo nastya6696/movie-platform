@@ -1,0 +1,8 @@
+@function px-to-rem($px) {
+  @return #{$px / 16px + "rem"};
+}
+
+@mixin fontSizes($font-size, $line-height) {
+  font-size: px-to-rem($font-size);
+  line-height: px-to-rem($line-height);
+}

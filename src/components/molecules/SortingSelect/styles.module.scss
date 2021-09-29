@@ -1,0 +1,19 @@
+@import 'src/assets/scss/common';
+
+.sortingSelect {
+  display: flex;
+
+  span {
+    margin-top: 8px;
+    color: $light-grey;
+    margin-right: 35px;
+  }
+
+  :global {
+    .react-select__control {
+      border: none;
+      background-color: transparent;
+    }
+
+  }
+}

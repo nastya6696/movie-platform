@@ -1,0 +1,6 @@
+@import "src/assets/scss/common";
+
+.moviesContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
