@@ -1,6 +1,6 @@
 export const Movies = [
   {
-
+    title: 'Pulp Fiction',
     year: 2004,
     type: 'Action & Adventure',
     imgName: 'PulpFiction'

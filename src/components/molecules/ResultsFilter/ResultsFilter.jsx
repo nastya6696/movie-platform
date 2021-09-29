@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 
 export const ResultsFilter = (props) => {
   const getTabsTitlesList = () => {
-    return MovieTypes.map(type => <Tab>{type}</Tab>);
+    return MovieTypes.map(type => <Tab key={type}>{type}</Tab>);
   }
 
   return (
