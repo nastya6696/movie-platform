@@ -1,0 +1,20 @@
+@import "src/assets/scss/common";
+
+.errorCard {
+  width: 323px;
+  height: 455px;
+  background-color: $grey;
+  border-radius: 4px;
+  padding: 100px 30px;
+  text-align: center;
+
+  h2 {
+    @include fontSizes(30px, 40px);
+    font-weight: 400;
+  }
+
+  p {
+    margin-top: 20px;
+    @include fontSizes(16px, 24px);
+  }
+}

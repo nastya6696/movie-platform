@@ -1,0 +1,12 @@
+@import "src/assets/scss/common";
+
+.searchBar {
+  width: 57%;
+  height: 45px;
+  border-radius: 4px;
+  border: none;
+  background-color: $grey-background-20-transparent;
+  @include fontSizes(20px, 25px);
+  font-weight: 100;
+  margin-right: 15px;
+}

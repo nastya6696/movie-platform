@@ -1,0 +1,28 @@
+@import "src/assets/scss/common";
+
+.movieCard {
+  width: 323px;
+  margin-bottom: 45px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+
+  @include fontSizes(18px, 22px);
+  opacity: 0.7;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+.year {
+  border: 1px solid $grey-border-50-transparent;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.type {
+  @include fontSizes(14px, 17px);
+  margin-top: 8px;
+  color: $white-50-transparent;
+}

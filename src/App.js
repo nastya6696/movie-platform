@@ -1,25 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import {Banner, Movies, Footer} from "./components/molecules";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import styles from './styles.module.scss';
 
-export default App;
+export const App = () => (
+  <div className={styles.mainPage}>
+    <Banner />
+    <Movies />
+    <Footer />
+  </div>
+)

@@ -1,0 +1,11 @@
+@import "src/assets/scss/common";
+
+.logoText {
+  @include fontSizes(20px, 25px);
+  color: $red;
+  font-weight: 300;
+}
+
+.boldText {
+  font-weight: 900;
+}
