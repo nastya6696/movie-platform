@@ -1,7 +1,8 @@
-export const MovieTypes = [
+import {MovieTypes} from "../../../../assets/mocks";
+
+export const MovieTypesGeneral = [
   'ALL',
-  'DOCUMENTARY',
-  'COMEDY',
-  'HORROR',
-  'CRIME'
-]
+  ...MovieTypes
+];
+
+

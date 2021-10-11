@@ -1,4 +1,4 @@
-export const Movies = [
+export const MoviesData = [
   {
     title: 'Pulp Fiction',
     year: 2004,

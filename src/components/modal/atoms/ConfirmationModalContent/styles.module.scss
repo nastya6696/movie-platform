@@ -1,0 +1,25 @@
+@import "src/assets/scss/common";
+
+.icon {
+  display: block;
+  text-align: center;
+  width: 66px;
+  height: 66px;
+  margin: auto;
+}
+
+.title {
+  @include fontSizes(40px, 48px);
+  font-weight: 300;
+  color: $white;
+  margin-top: 31px;
+  text-align: center;
+}
+
+.text {
+  @include fontSizes(20px, 24px);
+  color: $white;
+  width: 302px;
+  margin: 29px auto 0;
+  text-align: center;
+}

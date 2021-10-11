@@ -3,11 +3,11 @@ import {Search} from "../Search";
 
 import styles from './styles.module.scss';
 
-export const Banner = () => (
+export const Banner = ({handleClick}) => (
   <div className={styles.banner}>
     <div className={styles.header}>
       <LogoIcon boldPart="netflix" thinPart="roulette"/>
-      <button className={styles.addMovieBtn}>+ ADD MOVIE</button>
+      <button onClick={handleClick} className={styles.addMovieBtn}>+ ADD MOVIE</button>
     </div>
     <div className={styles.searchArea}>
       <h1 className={styles.title}>FIND YOUR MOVIE</h1>

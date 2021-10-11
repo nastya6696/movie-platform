@@ -1,0 +1,15 @@
+@import "src/assets/scss/common";
+
+.deleteContent {
+  color: $white;
+  @include fontSizes(20px, 25px);
+  margin-top: 37px;
+
+  p {
+    margin-bottom: 52px;
+  }
+
+  button {
+    float: right;
+  }
+}
