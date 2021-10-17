@@ -1,15 +1,17 @@
-import {ErrorBoundary, MovieCard} from "../../atoms";
-import {Movies} from "./mocks";
+import {ErrorBoundary} from "../../atoms";
+import {MovieCard} from "../MovieCard";
 
 import styles from './styles.module.scss';
 
-export const MoviesList = () => (
-  <div className={styles.moviesContainer}>
-    {
-      Movies.map(movie =>
-        <ErrorBoundary title={movie.title} key={movie.title}>
-          <MovieCard movie={movie}/>
-        </ErrorBoundary>)
-    }
-  </div>
-)
+export const MoviesList = ({movies}) => {
+  return (
+    <div className={styles.moviesContainer}>
+      {
+        movies.map(movie =>
+          <ErrorBoundary title={movie.title} key={movie.title}>
+            <MovieCard movie={movie} />
+          </ErrorBoundary>)
+      }
+    </div>
+  )
+};

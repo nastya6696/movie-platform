@@ -1,4 +1,4 @@
-@import "src/assets/scss/common";
+@import "../../../assets/scss/common";
 
 .movieCard {
   width: 323px;
@@ -25,4 +25,8 @@
   @include fontSizes(14px, 17px);
   margin-top: 8px;
   color: $white-50-transparent;
+}
+
+.imageContainer {
+  position: relative;
 }

@@ -1,0 +1,1 @@
+export { MovieFormContent } from './MovieFormContent';

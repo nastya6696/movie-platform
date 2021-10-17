@@ -1,0 +1,41 @@
+@import "src/assets/scss/common";
+
+.actions {
+  width: 190px;
+  height: 111px;
+  border-radius: 4px;
+  background-color: #232323eb;
+  color: $white;
+  z-index: 1001;
+  position: absolute;
+  float: right;
+  right: 14px;
+  top: 14px;
+
+  li {
+    height: 34px;
+    padding: 6px 14px 8px 23px;
+    @include fontSizes(16px, 19.5px);
+
+    &:first-of-type {
+      margin-top: 30px;
+    }
+
+    &:hover {
+      background-color: $red;
+    }
+  }
+
+  div {
+    z-index: 1300;
+  }
+  .closeIcon {
+    width: 14px;
+    height: 14px;
+    float: right;
+    top: 7px;
+    right: 10px;
+    position: relative;
+    z-index: 1300;
+  }
+}

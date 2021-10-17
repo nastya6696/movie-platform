@@ -1,0 +1,7 @@
+@import "src/assets/scss/common";
+
+.title {
+  @include fontSizes(40px, 48px);
+  font-weight: 300;
+  color: $white;
+}
