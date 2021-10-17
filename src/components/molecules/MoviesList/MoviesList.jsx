@@ -1,4 +1,5 @@
-import {ErrorBoundary, MovieCard} from "../../atoms";
+import {ErrorBoundary} from "../../atoms";
+import {MovieCard} from "../MovieCard";
 
 import styles from './styles.module.scss';
 

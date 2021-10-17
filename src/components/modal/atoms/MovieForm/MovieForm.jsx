@@ -5,11 +5,13 @@ import styles from './styles.module.scss';
 import {useEffect, useState} from "react";
 import {initialFormDataState} from "../../../../App";
 
-export const MovieForm = ({selectedMovie, handleSubmit}) => {
+export const MovieForm = ({selectedMovie = initialFormDataState, handleSubmit, handleReset}) => {
   const [formData, setFormData] = useState(selectedMovie);
 
   useEffect(() => {
     setFormData(selectedMovie)
+
+    return () => setFormData(initialFormDataState);
   }, [selectedMovie]);
 
   const handleChange = (e) => {
@@ -17,10 +19,6 @@ export const MovieForm = ({selectedMovie, handleSubmit}) => {
       ...prevState,
       [e.target.name]: e.target.value
     }))
-  }
-
-  const handleReset = () => {
-    setFormData(initialFormDataState);
   }
 
   return (
