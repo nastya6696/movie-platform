@@ -30,3 +30,20 @@
 .imageContainer {
   position: relative;
 }
+
+.movieActions {
+  float: right;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 50px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: $white-50-transparent;
+
+  &:hover {
+    background-color: $grey;
+    opacity: 0.5;
+  }
+}

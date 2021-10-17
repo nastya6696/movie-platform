@@ -1,4 +1,4 @@
 export { MovieForm } from './MovieForm';
-export { Header } from './Header';
+export { HeaderModal } from './HeaderModal';
 export { DeleteModalContent } from './DeleteModalContent';
 export { ConfirmationModalContent } from './ConfirmationModalContent';

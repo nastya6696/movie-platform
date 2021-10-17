@@ -1,0 +1,28 @@
+@import "../../../assets/scss/common";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 60px;
+}
+
+.addMovie {
+  width: 177px;
+  height: 46px;
+  border-radius: 4px;
+  color: $red;
+  background-color: $grey-background-30-transparent;
+  border: none;
+  @include fontSizes(20px, 25px);
+  padding: 11px 18px;
+}
+
+.search {
+  width: 30px;
+  height: 30px;
+  background-image: url("../../../assets/svg/searchBtn.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: inherit;
+}
