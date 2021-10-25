@@ -1,5 +1,4 @@
 import {Banner, Movies, Footer, MovieDetails} from "./components/molecules";
-import {MoviesData} from "./components/molecules/MoviesList/mocks";
 
 import styles from './styles.module.scss';
 import {createContext} from "react";
@@ -10,13 +9,13 @@ export const MovieCardContext = createContext({
 });
 
 export const App = () => {
-  const {isBannerOpened, selectedMovie, handleMovieDetailsOpen, handleSearchBtnClick} = usePageStateHandler();
-
+  const {isBannerOpened, selectedMovie, movies, handleMovieDetailsOpen, handleSearchBtnClick} = usePageStateHandler();
+  console.log('MOVIES', movies);
   return (
     <MovieCardContext.Provider value={{handleCardClick: handleMovieDetailsOpen}} >
       <div className={styles.mainPage}>
         {isBannerOpened ? <Banner /> : <MovieDetails details={selectedMovie} handleSearchBtnClick={handleSearchBtnClick} />}
-        <Movies movies={MoviesData} />
+        <Movies movies={[...Object.values(movies.moviesList)]} />
         <Footer />
       </div>
     </MovieCardContext.Provider>
