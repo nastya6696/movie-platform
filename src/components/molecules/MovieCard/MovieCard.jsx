@@ -1,10 +1,11 @@
-import {useState} from "react";
+import {useContext, useState} from "react";
 
 import {MovieAction} from "../../atoms/MovieActions";
 import {MovieFormContent} from "../../modal/molecules";
-import {ConfirmationModalContent, DeleteModalContent, Header, MovieForm} from "../../modal/atoms";
+import {ConfirmationModalContent, DeleteModalContent, HeaderModal, MovieForm} from "../../modal/atoms";
 import {Modal} from "../../modal";
 import {ModalTypes} from "../../modal/types";
+import {MovieCardContext} from "../../../App";
 
 import PulpFiction from '../../../assets/images/pulpFiction.png';
 import BohemianRhapsody from '../../../assets/images/bohemianRhapsody.png';
@@ -26,12 +27,13 @@ const ImgSrc = {
 
 export const MovieCard = ({movie}) => {
   const {title, year, type, imgName} = movie;
+  const { handleCardClick } = useContext(MovieCardContext);
 
   const [isActionsOpen, setIsActionsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState('');
 
-  const handleCardClick = () => {setIsActionsOpen(true)}
+  const handleMoreBtnClick = () => {setIsActionsOpen(true)}
 
   const handleMovieActionClick = (e) => {
     e.stopPropagation();
@@ -59,8 +61,9 @@ export const MovieCard = ({movie}) => {
   return (
     <>
       <div className={styles.movieCard}>
-        <div className={styles.imageContainer} onClick={handleCardClick}>
+        <div className={styles.imageContainer} data-title={title} onClick={handleCardClick}>
           <img alt={title} src={ImgSrc[imgName]} />
+          <button className={styles.movieActions} onClick={handleMoreBtnClick}>...</button>
           <MovieAction
             title={title}
             isOpen={isActionsOpen}
@@ -78,7 +81,7 @@ export const MovieCard = ({movie}) => {
         <MovieFormContent>
           {modalType === CONFIRMATION ? <ConfirmationModalContent />
             : <>
-              <Header title={`${modalType.toUpperCase()} MOVIE`} />
+              <HeaderModal title={`${modalType.toUpperCase()} MOVIE`} />
               {
                 modalType === DELETE ? <DeleteModalContent /> :
                   <MovieForm selectedMovie={movie} handleSubmit={handleSubmit} handleReset={handleModalCLose}/>

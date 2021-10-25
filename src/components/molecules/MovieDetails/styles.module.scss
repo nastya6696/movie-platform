@@ -1,0 +1,60 @@
+@import 'src/assets/scss/common';
+
+.movieDetails {
+  height: 606px;
+  background-color: $black;
+  padding: 35px 60px 29px;
+}
+
+.container {
+  display: flex;
+}
+
+.details {
+  margin-left: 60px;
+  color: $white;
+  position: relative;
+}
+
+.title {
+  @include fontSizes(40px, 48px);
+  font-weight: 300;
+  display: inline-block;
+  margin-right: 25px;
+}
+
+.rating {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border: 1px solid $white;
+  border-radius: 50%;
+  padding-top: 18px;
+  text-align: center;
+  @include fontSizes(20px, 24px);
+  font-weight: 100;
+  position: absolute;
+  top: -8px;
+}
+
+.genres {
+  margin-top: 9px;
+  @include fontSizes(14px, 17px);
+  color: $white-50-transparent;
+}
+
+.releaseInfo {
+  margin-top: 30px;
+  color: $red;
+  @include fontSizes(24px, 29px);
+
+  span:first-of-type {
+    margin-right: 50px;
+  }
+}
+
+.overview {
+  margin-top: 30px;
+  color: $white-50-transparent;
+  @include fontSizes(20px, 24px);
+}

@@ -3,7 +3,16 @@ import {Button} from "../../../atoms";
 
 import styles from './styles.module.scss';
 import {useEffect, useState} from "react";
-import {initialFormDataState} from "../../../../App";
+
+const initialFormDataState = {
+  title: '',
+  url: '',
+  releaseDate: '',
+  rating: '',
+  genre: [],
+  runtime: '',
+  overview: ''
+};
 
 export const MovieForm = ({selectedMovie = initialFormDataState, handleSubmit, handleReset}) => {
   const [formData, setFormData] = useState(selectedMovie);
