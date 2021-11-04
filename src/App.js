@@ -10,12 +10,12 @@ export const MovieCardContext = createContext({
 
 export const App = () => {
   const {isBannerOpened, selectedMovie, movies, handleMovieDetailsOpen, handleSearchBtnClick} = usePageStateHandler();
-  console.log('MOVIES', movies);
+
   return (
     <MovieCardContext.Provider value={{handleCardClick: handleMovieDetailsOpen}} >
       <div className={styles.mainPage}>
         {isBannerOpened ? <Banner /> : <MovieDetails details={selectedMovie} handleSearchBtnClick={handleSearchBtnClick} />}
-        <Movies movies={[...Object.values(movies.moviesList)]} />
+        <Movies movies={movies} />
         <Footer />
       </div>
     </MovieCardContext.Provider>

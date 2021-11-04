@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {getMovies} from "../redux/actions";
+import {getMoviesRequest} from "../redux/actions";
 import {useDispatch, useSelector} from "react-redux";
 import {moviesList} from "../redux/reducers/moviesList";
 
@@ -7,13 +7,11 @@ export const usePageStateHandler = () => {
   const [isBannerOpened, setIsBannerOpened] = useState(true);
   const [selectedMovie, setSelectedMovie] = useState({});
   const dispatch = useDispatch();
+  const movies = useSelector(moviesList).moviesList;
 
   useEffect(() => {
-    console.log('Before dispatch action');
-    dispatch(getMovies());
-  }, []);
-
-  const movies = useSelector(moviesList);
+    dispatch(getMoviesRequest());
+  }, [dispatch]);
 
   const handleMovieDetailsOpen = (e) => {
     setIsBannerOpened(false);

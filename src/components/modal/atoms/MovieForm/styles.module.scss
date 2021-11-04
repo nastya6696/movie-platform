@@ -7,8 +7,7 @@
     color: $red;
     @include fontSizes(16px, 19.5px);
 
-    input,
-    select
+    input
     {
       display: block;
       width: 301px;
@@ -18,10 +17,20 @@
       background-color: $dark-grey-5-transparent;
       border: none;
       color: $white;
+    }
 
-      &.bigInput {
-        width: 525px;
-        height: 57px;
+    .bigInput {
+      width: 525px;
+      height: 57px;
+
+      input[type=checkbox] {
+        height: auto;
+        width: auto;
+        display: inline-block;
+      }
+
+      #search_input {
+        width: 100%
       }
     }
 
