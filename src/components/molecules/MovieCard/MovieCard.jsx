@@ -49,8 +49,7 @@ export const MovieCard = ({movie}) => {
     setIsModalOpen(false);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmitForm = () => {
     setModalType(CONFIRMATION);
   }
 
@@ -88,7 +87,7 @@ export const MovieCard = ({movie}) => {
                   modalType === DELETE ? <DeleteModalContent /> :
                     <MovieForm
                       selectedMovie={movie}
-                      handleSubmit={handleSubmit}
+                      handleSubmitForm={handleSubmitForm}
                       handleReset={handleModalCLose}
                       actionType='EDIT_MOVIE'
                     />
