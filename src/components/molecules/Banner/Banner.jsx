@@ -43,7 +43,7 @@ export const Banner = () => {
           {modalType === CONFIRMATION ? <ConfirmationModalContent />
             : <>
               <HeaderModal title={`ADD MOVIE`} />
-              <MovieForm handleSubmit={handleSubmit} handleReset={handleCLose}/>
+              <MovieForm handleSubmit={handleSubmit} handleReset={handleCLose} actionType='ADD_MOVIE'/>
             </>
           }
         </MovieFormContent>

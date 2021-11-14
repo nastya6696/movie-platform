@@ -1,6 +1,11 @@
 export const MovieTypes = [
-  'Documentary',
+  'Animation',
+  'Adventure',
+  'Family',
   'Comedy',
-  'Horror',
-  'Crime'
+  'Drama',
+  'Romance',
+  'Fantasy',
+  'Science Fiction',
+  'Action'
 ];

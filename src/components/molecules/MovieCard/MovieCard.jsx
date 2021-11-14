@@ -1,4 +1,4 @@
-import {useContext, useState} from "react";
+import {createContext, useContext, useState} from "react";
 
 import {MovieAction} from "../../atoms/MovieActions";
 import {MovieFormContent} from "../../modal/molecules";
@@ -7,33 +7,29 @@ import {Modal} from "../../modal";
 import {ModalTypes} from "../../modal/types";
 import {MovieCardContext} from "../../../App";
 
-import PulpFiction from '../../../assets/images/pulpFiction.png';
-import BohemianRhapsody from '../../../assets/images/bohemianRhapsody.png';
-import Avengers from '../../../assets/images/avengers.png';
-import KillBill from '../../../assets/images/killBill.png';
-import Inception from '../../../assets/images/inception.png';
-import DogsReservoir from '../../../assets/images/dogsReservoir.png';
-
 import styles from './styles.module.scss';
+import {formatGenres, formatReleaseDate} from "../../../helpers";
+import {deleteMovieRequest} from "../../../redux/actions";
+import {useDispatch} from "react-redux";
 
-const ImgSrc = {
-  PulpFiction,
-  BohemianRhapsody,
-  Avengers,
-  KillBill,
-  Inception,
-  DogsReservoir
-}
+export const DeleteModalContext = createContext({
+  handleDeleteClick: () => {}
+});
 
 export const MovieCard = ({movie}) => {
-  const {title, year, type, imgName} = movie;
+  const {title, genres, poster_path, release_date} = movie;
   const { handleCardClick } = useContext(MovieCardContext);
 
   const [isActionsOpen, setIsActionsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState('');
 
-  const handleMoreBtnClick = () => {setIsActionsOpen(true)}
+  const dispatch = useDispatch();
+
+  const handleMoreBtnClick = (e) => {
+    e.stopPropagation();
+    setIsActionsOpen(true);
+  }
 
   const handleMovieActionClick = (e) => {
     e.stopPropagation();
@@ -58,11 +54,16 @@ export const MovieCard = ({movie}) => {
     setModalType(CONFIRMATION);
   }
 
+  const handleDeleteMovie = () => {
+    dispatch(deleteMovieRequest(movie));
+    setModalType(CONFIRMATION);
+  }
+
   return (
     <>
       <div className={styles.movieCard}>
         <div className={styles.imageContainer} data-title={title} onClick={handleCardClick}>
-          <img alt={title} src={ImgSrc[imgName]} />
+          <img alt={title} src={poster_path} />
           <button className={styles.movieActions} onClick={handleMoreBtnClick}>...</button>
           <MovieAction
             title={title}
@@ -73,22 +74,29 @@ export const MovieCard = ({movie}) => {
         </div>
         <div className={styles.info}>
           <p>{title}</p>
-          <p className={styles.year}>{year}</p>
+          <p className={styles.year}>{formatReleaseDate(release_date)}</p>
         </div>
-        <p className={styles.type}>{type}</p>
+        <p className={styles.type}>{formatGenres(genres)}</p>
       </div>
       <Modal isOpen={isModalOpen} handleCLose={handleModalCLose} type={modalType}>
-        <MovieFormContent>
-          {modalType === CONFIRMATION ? <ConfirmationModalContent />
-            : <>
-              <HeaderModal title={`${modalType.toUpperCase()} MOVIE`} />
-              {
-                modalType === DELETE ? <DeleteModalContent /> :
-                  <MovieForm selectedMovie={movie} handleSubmit={handleSubmit} handleReset={handleModalCLose}/>
-              }
-            </>
-          }
-        </MovieFormContent>
+        <DeleteModalContext.Provider value={{handleDeleteClick: handleDeleteMovie}}>
+          <MovieFormContent>
+            {modalType === CONFIRMATION ? <ConfirmationModalContent />
+              : <>
+                <HeaderModal title={`${modalType.toUpperCase()} MOVIE`} />
+                {
+                  modalType === DELETE ? <DeleteModalContent /> :
+                    <MovieForm
+                      selectedMovie={movie}
+                      handleSubmit={handleSubmit}
+                      handleReset={handleModalCLose}
+                      actionType='EDIT_MOVIE'
+                    />
+                }
+              </>
+            }
+          </MovieFormContent>
+        </DeleteModalContext.Provider>
       </Modal>
     </>
   )
