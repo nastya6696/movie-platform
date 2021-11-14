@@ -20,8 +20,7 @@ export const Banner = () => {
     setIsModalOpen(true);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     setModalType(CONFIRMATION);
   }
 
@@ -43,7 +42,7 @@ export const Banner = () => {
           {modalType === CONFIRMATION ? <ConfirmationModalContent />
             : <>
               <HeaderModal title={`ADD MOVIE`} />
-              <MovieForm handleSubmit={handleSubmit} handleReset={handleCLose} actionType='ADD_MOVIE'/>
+              <MovieForm handleSubmitForm={handleSubmit} handleReset={handleCLose} actionType='ADD_MOVIE'/>
             </>
           }
         </MovieFormContent>

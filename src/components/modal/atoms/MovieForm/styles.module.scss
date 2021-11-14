@@ -47,6 +47,13 @@
   }
 }
 
+:global {
+  .searchWrapper {
+    padding: 0 !important;
+    border: none !important;
+  }
+}
+
 .fieldsGroup {
   display: flex;
   justify-content: space-between;
