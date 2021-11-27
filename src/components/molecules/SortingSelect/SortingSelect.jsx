@@ -5,13 +5,16 @@ import styles from './styles.module.scss';
 import {useEffect, useState} from "react";
 import {useDispatch} from "react-redux";
 import {sortMoviesRequest} from "../../../redux/actions";
+import {useHistory} from "react-router-dom";
 
 export const SortingSelect = () => {
   const [selectedOption, setSelectedOption] = useState(SortingOptions[0]);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleSelectChange = (selectedOption) => {
     setSelectedOption(selectedOption);
+    history.push(`/search?sortBy=${selectedOption.value}`);
   }
 
   useEffect(() => {
