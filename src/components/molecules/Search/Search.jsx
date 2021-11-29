@@ -1,9 +1,9 @@
 import styles from './styles.module.scss';
 import {Button} from "../../atoms";
-import {useState} from "react";
+import React from "react";
 
 export const Search = () => {
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = React.useState('');
 
   const handleChange = (e) => {
     setSearchValue(e.target.value);

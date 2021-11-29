@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should create simple Footer component 1`] = `
+<div
+  className="footer"
+>
+  
+     (--- LogoIcon ---): props {
+     boldPart: 'netflix',
+     thinPart: 'roulette'
+    }
+</div>
+`;

@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieDetails should create simple MovieDetails component 1`] = `
+<div
+  className="movieDetails"
+>
+  <div
+    className="header"
+  >
+    <div
+      className="logoText"
+    >
+      <strong
+        className="boldText"
+      >
+        netflix
+      </strong>
+      roulette
+    </div>
+    <button
+      className="search"
+      onClick={[MockFunction]}
+    >
+      
+    </button>
+  </div>
+  <div
+    className="container"
+  >
+    <img
+      alt="test title"
+      className="img"
+      src="https://posterpath.com"
+    />
+    <div
+      className="details"
+    >
+      <h1
+        className="title"
+      >
+        TEST TITLE
+      </h1>
+      <span
+        className="rating"
+      >
+        9
+      </span>
+      <p
+        className="genres"
+      >
+        Drama
+      </p>
+      <div
+        className="releaseInfo"
+      >
+        <span>
+          2021
+        </span>
+        <span>
+          108
+        </span>
+      </div>
+      <p
+        className="overview"
+      >
+        overview
+      </p>
+    </div>
+  </div>
+</div>
+`;

@@ -1,7 +1,7 @@
 import {moviesList} from "../moviesList";
 import {ADD_MOVIE, DELETE_MOVIE, EDIT_MOVIE, GET_MOVIES} from "../../actions/actionTypes";
 
-describe('should create test for movieList reducer', () => {
+describe('should create tests for movieList reducer', () => {
   it('should return the initial state', () => {
     expect(moviesList(undefined, {type: 'NOT_EXISTING_TYPE'})).toEqual([])
   });
