@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 
 const Actions = ['Edit', 'Delete']
 
-export const MovieAction = ({isOpen, handleClose, handleActionClick}) => {
+export const MovieAction = ({isOpen, handleClose, handleActionClick, actions = Actions}) => {
   if(!isOpen) return null;
 
   return (
@@ -13,7 +13,7 @@ export const MovieAction = ({isOpen, handleClose, handleActionClick}) => {
         <div onClick={handleClose}>
           <img src={CloseIcon} alt="closeIcon" className={styles.closeIcon}/>
         </div>
-        {Actions.map(action => <li key={action}>{action}</li>)}
+        {actions.map(action => <li key={action}>{action}</li>)}
       </ul>
     </>
   )

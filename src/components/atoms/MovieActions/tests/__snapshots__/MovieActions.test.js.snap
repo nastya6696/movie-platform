@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieAction should create simple MovieAction components 1`] = `
+<ul
+  className="actions"
+  onClick={[MockFunction]}
+>
+  <div
+    onClick={[MockFunction]}
+  >
+    <img
+      alt="closeIcon"
+      className="closeIcon"
+      src="closeBtnPopup.svg"
+    />
+  </div>
+  <li>
+    Action1
+  </li>
+  <li>
+    Action2
+  </li>
+</ul>
+`;
+
+exports[`MovieAction should not create simple MovieAction components 1`] = `null`;
