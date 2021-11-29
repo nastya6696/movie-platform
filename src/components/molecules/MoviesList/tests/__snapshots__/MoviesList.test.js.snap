@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoviesList should create simple MoviesList component 1`] = `
+<div
+  className="moviesContainer"
+>
+  
+     (--- ErrorBoundary ---): props {
+      children: [object Object],
+      title: movie1
+     }
+  
+     (--- ErrorBoundary ---): props {
+      children: [object Object],
+      title: movie2
+     }
+  
+     (--- ErrorBoundary ---): props {
+      children: [object Object],
+      title: movie3
+     }
+</div>
+`;

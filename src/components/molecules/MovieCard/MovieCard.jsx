@@ -65,7 +65,6 @@ export const MovieCard = ({movie}) => {
           <img alt={title} src={poster_path} />
           <button className={styles.movieActions} onClick={handleMoreBtnClick}>...</button>
           <MovieAction
-            title={title}
             isOpen={isActionsOpen}
             handleClose={handleCloseActions}
             handleActionClick={handleMovieActionClick}

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should create simple HeaderModal component 1`] = `
+<h2
+  className="title"
+>
+  Test modal header
+</h2>
+`;

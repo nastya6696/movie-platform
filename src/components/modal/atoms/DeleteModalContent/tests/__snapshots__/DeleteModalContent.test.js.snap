@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mock hook 1`] = `
+<div
+  className="deleteContent"
+>
+  <p>
+    Are you sure you want to delete this movie?
+  </p>
+  <Button
+    name="CONFIRM"
+  />
+</div>
+`;
+
+exports[`should create simple DeleteModalContent component 1`] = `
+<div
+  className="deleteContent"
+>
+  <p>
+    Are you sure you want to delete this movie?
+  </p>
+  <Button
+    name="CONFIRM"
+  />
+</div>
+`;

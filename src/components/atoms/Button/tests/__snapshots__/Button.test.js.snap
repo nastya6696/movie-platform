@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should create simple button component 1`] = `
+<button
+  className="btnBasic"
+  onClick={[MockFunction]}
+>
+  Test button name
+</button>
+`;

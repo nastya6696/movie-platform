@@ -6,7 +6,7 @@ import styles from './styles.module.scss';
 import {useDispatch} from "react-redux";
 import {filterMovies} from "../../../redux/actions";
 
-export const ResultsFilter = (props) => {
+export const ResultsFilter = ({children}) => {
   const dispatch = useDispatch();
 
   const getTabsTitlesList = () => {
@@ -26,7 +26,7 @@ export const ResultsFilter = (props) => {
         </TabList>
 
         <TabPanel>
-          {props.children}
+          {children}
         </TabPanel>
       </Tabs>
     </div>

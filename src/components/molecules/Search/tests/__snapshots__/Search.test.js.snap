@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search should create simple Search component 1`] = `
+Array [
+  <input
+    className="searchBar"
+    name="search"
+    onChange={[Function]}
+    placeholder="What do you want to watch?"
+    type="text"
+    value=""
+  />,
+  "
+     (--- Button ---): props {
+      name: SEARCH,
+      handleClick: undefined
+     }",
+]
+`;

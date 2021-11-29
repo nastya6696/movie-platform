@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorBoundary should create simple ErrorBoundary component wrapper 1`] = `
+<div
+  className="errorCard"
+>
+  <h2>
+    Oops something went wrong!
+  </h2>
+  <p>
+    Movie will apear later!
+  </p>
+</div>
+`;
+
+exports[`ErrorBoundary should render correct component without ErrorBoundary component wrapper 1`] = `
+<div>
+  Inner content
+</div>
+`;

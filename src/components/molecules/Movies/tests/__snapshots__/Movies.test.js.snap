@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movies should create simple Movies component 1`] = `
+<div
+  className="movies"
+>
+  <div
+    className="content"
+  >
+    <div
+      className="sortingMethods"
+    >
+      
+     (--- ResultsFilter ---): props {
+     children: 'undefined'
+    }
+      
+     (--- SortingSelect ---)
+    </div>
+    <p
+      className="resultText"
+    >
+      <strong>
+        3
+      </strong>
+       movies found
+    </p>
+    
+     (--- ResultsFilter ---): props {
+     movies: '[object Object],[object Object],[object Object]'
+    }
+  </div>
+</div>
+`;

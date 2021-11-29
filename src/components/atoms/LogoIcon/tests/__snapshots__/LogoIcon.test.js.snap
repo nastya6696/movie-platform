@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LogoIcon should create simple LogoIcon component 1`] = `
+<div
+  className="logoText"
+>
+  <strong
+    className="boldText"
+  >
+    boldPart
+  </strong>
+  thinPart
+</div>
+`;
