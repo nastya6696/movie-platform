@@ -17,7 +17,7 @@ export const moviesList = (state = [], action) => {
     case SORT_MOVIES:
       return [...action.payload];
     case FILTER_MOVIES:
-      return [...state.filter(movie => movie.genres.includes(action.payload))];
+      return [...action.payload];
     default:
       return state;
   }

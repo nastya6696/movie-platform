@@ -4,10 +4,12 @@ import {MovieTypesGeneral} from "./mocks";
 import 'react-tabs/style/react-tabs.css';
 import styles from './styles.module.scss';
 import {useDispatch} from "react-redux";
-import {filterMovies} from "../../../redux/actions";
+import {filterMoviesRequest} from "../../../redux/actions";
+import {useHistory} from "react-router-dom";
 
 export const ResultsFilter = (props) => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const getTabsTitlesList = () => {
     return MovieTypesGeneral.map(type => <Tab key={type}>{type.toUpperCase()}</Tab>);
@@ -15,7 +17,11 @@ export const ResultsFilter = (props) => {
 
   const handleFilterOption = (e) => {
     const filterOption = e.target.innerHTML;
-    dispatch(filterMovies(filterOption.substr(0,1).concat(filterOption.substr(1).toLowerCase())));
+    dispatch(filterMoviesRequest(filterOption));
+    history.push({
+      pathname: '/search',
+      search: `?genre=${filterOption}`
+    })
   }
 
   return (
