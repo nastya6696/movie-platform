@@ -20,6 +20,10 @@ const sortMovies = (data) => {
   return {type: SORT_MOVIES, payload: data};
 }
 
+const filterMovies = (data) => {
+  return {type: FILTER_MOVIES, payload: data};
+}
+
 export const getMoviesRequest = () => async (dispatch) => {
   const response = await fetch('http://localhost:4000/movies', {method: 'GET'});
 
@@ -80,7 +84,18 @@ export const sortMoviesRequest = (searchParam, sortOrder = 'desc') => async (dis
   }
 }
 
-export const filterMovies = (filterOption) => async (dispatch) => {
-  filterOption === 'All' ? dispatch(getMoviesRequest()) : dispatch({type: FILTER_MOVIES, payload: filterOption});
+export const filterMoviesRequest = (filterOption) => async (dispatch) => {
+  if(filterOption === 'All') {
+    dispatch(getMoviesRequest());
+  } else {
+    const response = await fetch(`http://localhost:4000/movies?filter=${filterOption}`, {
+      method: 'GET'
+    });
+
+    if(response.ok) {
+      const data = await response.json();
+      dispatch(filterMovies(data.data));
+    }
+  }
 }
 
